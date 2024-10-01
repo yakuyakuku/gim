@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://c73rafrkegngg"]
+
+[ext_resource type="Texture2D" uid="uid://dlpviis3qtu0e" path="res://Asset/Free/336.png" id="1_nldpl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7vdk"]
+atlas = ExtResource("1_nldpl")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq4s8"]
+atlas = ExtResource("1_nldpl")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oqjv"]
+atlas = ExtResource("1_nldpl")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc44m"]
+atlas = ExtResource("1_nldpl")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dh88"]
+atlas = ExtResource("1_nldpl")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvqg0"]
+atlas = ExtResource("1_nldpl")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6wtv"]
+atlas = ExtResource("1_nldpl")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql4ur"]
+atlas = ExtResource("1_nldpl")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7m5h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_l7vdk")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_jq4s8")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_7oqjv")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_oc44m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dh88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvqg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6wtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql4ur")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"F1",
+"speed": 12.0
+}]
+
+[node name="Fire1" type="AnimatedSprite2D"]
+position = Vector2(281, 78)
+scale = Vector2(2.1875, 2.1875)
+sprite_frames = SubResource("SpriteFrames_y7m5h")
+animation = &"F1"

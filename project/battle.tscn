@@ -1,0 +1,433 @@
+[gd_scene load_steps=31 format=3 uid="uid://dqtjff8sdgjlk"]
+
+[ext_resource type="Texture2D" uid="uid://baqot7wyesyj7" path="res://Asset/dragonite.png" id="1_8dwdm"]
+[ext_resource type="Texture2D" uid="uid://x3272jvtlh8r" path="res://Asset/M1.png" id="3_ltrs0"]
+[ext_resource type="Texture2D" uid="uid://b2mg3sl16431b" path="res://Asset/menu1.png" id="3_seubr"]
+[ext_resource type="Texture2D" uid="uid://b2ead1h4e4x1e" path="res://Asset/06.png" id="4_o5fua"]
+[ext_resource type="FontFile" uid="uid://bkapmuff0a645" path="res://Asset/mago3.ttf" id="5_6q2vf"]
+[ext_resource type="Texture2D" uid="uid://d6sm3jdonrxg" path="res://Asset/BGP.png" id="5_sqrwm"]
+[ext_resource type="FontFile" uid="uid://c547k2equanpo" path="res://Asset/mago2.ttf" id="6_e6ffu"]
+[ext_resource type="Texture2D" uid="uid://dgcndqrfaupd7" path="res://Asset/Sprite-0003.png" id="6_gjfpb"]
+[ext_resource type="Texture2D" uid="uid://b3dehs7mjjalq" path="res://Asset/nature_1/1.png" id="7_aeksv"]
+[ext_resource type="Theme" uid="uid://dtjr7yggqpatn" path="res://ButtonUI.tres" id="8_y76ip"]
+[ext_resource type="Script" path="res://Script/button.gd" id="9_v4sas"]
+[ext_resource type="Script" path="res://Script/button_2.gd" id="11_i8xwb"]
+[ext_resource type="PackedScene" uid="uid://c73rafrkegngg" path="res://Skill 1.tscn" id="12_0l13k"]
+[ext_resource type="SpriteFrames" uid="uid://cc4hpbw40c6fw" path="res://Asset/Resources/SkillSP/Fire1.tres" id="13_4j4pc"]
+[ext_resource type="PackedScene" uid="uid://cr0cvkhcyl67a" path="res://Skill 2.tscn" id="13_4sirj"]
+[ext_resource type="Animation" uid="uid://cajhvd245q8ix" path="res://Asset/Resources/Skills/Fire Blast.res" id="14_n3mok"]
+[ext_resource type="SpriteFrames" uid="uid://wjey80bvctca" path="res://Asset/Resources/SkillSP/N1.tres" id="15_w6745"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4tltd"]
+texture = ExtResource("3_seubr")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="Theme" id="Theme_vu4mi"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_4tltd")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pq6no"]
+bg_color = Color(0.15, 0.15, 0.15, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_if1bu"]
+bg_color = Color(0, 1, 0.65, 1)
+
+[sub_resource type="Theme" id="Theme_2lrrt"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_pq6no")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_if1bu")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa3bd"]
+atlas = ExtResource("4_o5fua")
+region = Rect2(0, 64, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhq1d"]
+atlas = ExtResource("4_o5fua")
+region = Rect2(48, 64, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h72u1"]
+atlas = ExtResource("4_o5fua")
+region = Rect2(96, 64, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62rpe"]
+atlas = ExtResource("4_o5fua")
+region = Rect2(144, 64, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwf4c"]
+atlas = ExtResource("4_o5fua")
+region = Rect2(192, 64, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2kxvi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa3bd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhq1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h72u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62rpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwf4c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_g80en"]
+resource_name = "Nature Blast 1"
+length = 2.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlayerPartner/PlayerSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.8, 0.966667, 1.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(66, 163), Vector2(66, 163), Vector2(75, 163), Vector2(50, 163), Vector2(66, 163)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PlayerPartner/PlayerSprite/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.566667, 0.966667, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.270588, 0, 0), Color(0, 0.89, 0.267, 1), Color(0, 0.890196, 0.266667, 1), Color(1, 0.270588, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Enemy/EnemySprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.26667, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5, 1.53333, 1.56667, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(235, 66), Vector2(240, 66), Vector2(225, 66), Vector2(240, 66), Vector2(225, 66), Vector2(240, 66), Vector2(225, 66), Vector2(240, 66), Vector2(225, 66), Vector2(235, 66)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Enemy/EnemySprite/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.23333, 1.33333, 2.23333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CanvasLayer/Control/EnemyUI/EnemyBar:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.56667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"default", &"default"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../CanvasLayer/Control/EnemyUI/EnemyBar:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Enemy/EnemySprite/ColorRect:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.566667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.890196, 0.266667, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Animation/N1:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.566667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"N1"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Animation/N1:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.23333, 1.26667, 1.36667, 1.46667, 1.56667, 1.66667, 1.76667, 1.86667, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0gr2l"]
+_data = {
+"Fire Blast": ExtResource("14_n3mok"),
+"Nature Blast 1": SubResource("Animation_g80en")
+}
+
+[node name="Battle" type="Node2D"]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer2"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/ParallaxBackground/ParallaxLayer"]
+z_index = -99
+position = Vector2(196.5, 108.5)
+scale = Vector2(0.803819, 0.799383)
+texture = ExtResource("7_aeksv")
+
+[node name="Enemy" type="Node2D" parent="."]
+position = Vector2(61, 0)
+
+[node name="EnemySprite" type="Sprite2D" parent="Enemy"]
+clip_children = 2
+position = Vector2(235, 66)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_8dwdm")
+
+[node name="ColorRect" type="ColorRect" parent="Enemy/EnemySprite"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.713726)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -57.0
+offset_right = -7.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.890196, 0.266667, 1)
+
+[node name="PlayerPartner" type="Node2D" parent="."]
+position = Vector2(21, -27)
+
+[node name="PlayerSprite" type="Sprite2D" parent="PlayerPartner"]
+clip_children = 2
+position = Vector2(66, 163)
+texture = ExtResource("3_ltrs0")
+
+[node name="ColorRect" type="ColorRect" parent="PlayerPartner/PlayerSprite"]
+modulate = Color(1, 0.270588, 0, 0)
+self_modulate = Color(1, 1, 1, 0.784314)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = -80.0
+offset_right = 46.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerUI" type="Control" parent="CanvasLayer/Control"]
+anchors_preset = 0
+offset_left = 159.0
+offset_top = 151.0
+offset_right = 262.0
+offset_bottom = 191.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/PlayerUI"]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 98.0
+offset_bottom = 58.0
+theme = SubResource("Theme_vu4mi")
+
+[node name="PspriteClip" type="Sprite2D" parent="CanvasLayer/Control/PlayerUI"]
+clip_children = 1
+position = Vector2(37, 9)
+scale = Vector2(0.58, 0.44)
+texture = ExtResource("5_sqrwm")
+
+[node name="Sprite-0003" type="Sprite2D" parent="CanvasLayer/Control/PlayerUI/PspriteClip"]
+position = Vector2(-1.72413, 18.1818)
+scale = Vector2(1.2069, 1.59091)
+texture = ExtResource("6_gjfpb")
+
+[node name="pname" type="RichTextLabel" parent="CanvasLayer/Control/PlayerUI"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 38.0
+offset_right = 89.0
+offset_bottom = 55.0
+theme_override_fonts/normal_font = ExtResource("5_6q2vf")
+text = "RAR"
+scroll_active = false
+
+[node name="HP" type="RichTextLabel" parent="CanvasLayer/Control/PlayerUI"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 11.0
+offset_top = 24.0
+offset_right = 35.0
+offset_bottom = 42.0
+theme_override_fonts/normal_font = ExtResource("6_e6ffu")
+theme_override_font_sizes/normal_font_size = 21
+text = "HP:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="HP Poly" type="Polygon2D" parent="CanvasLayer/Control/PlayerUI"]
+clip_children = 2
+position = Vector2(3, 1.78814e-06)
+scale = Vector2(0.959263, 0.989506)
+polygon = PackedVector2Array(89.3165, 17.7667, 24.6835, 40, 89.3165, 40)
+metadata/_edit_group_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control/PlayerUI/HP Poly"]
+offset_left = 25.0
+offset_top = 14.0
+offset_right = 94.0
+offset_bottom = 40.0
+theme = SubResource("Theme_2lrrt")
+value = 75.0
+show_percentage = false
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/Control/PlayerUI"]
+visible = false
+clip_children = 2
+position = Vector2(1, -25)
+scale = Vector2(1.31429, 1.31429)
+polygon = PackedVector2Array(-8, -20, 73, -20, 73, 50, -8, 50)
+
+[node name="EnemyUI" type="Control" parent="CanvasLayer/Control"]
+anchors_preset = 0
+offset_left = 161.0
+offset_top = 11.0
+offset_right = 250.0
+offset_bottom = 40.0
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/Control/EnemyUI"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -2.0
+offset_right = 88.0
+offset_bottom = 27.0
+theme = SubResource("Theme_vu4mi")
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/Control/EnemyUI"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 90.0
+offset_bottom = 18.0
+theme_override_fonts/normal_font = ExtResource("5_6q2vf")
+theme_override_font_sizes/normal_font_size = 12
+text = "Skibidi Lizard"
+scroll_active = false
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/Control/EnemyUI"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 17.0
+offset_top = 7.0
+offset_right = 33.0
+offset_bottom = 25.0
+theme_override_fonts/normal_font = ExtResource("6_e6ffu")
+theme_override_font_sizes/normal_font_size = 18
+text = "HP"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="EnemyBar" type="AnimatedSprite2D" parent="CanvasLayer/Control/EnemyUI"]
+position = Vector2(56, 15)
+scale = Vector2(1.375, 1.375)
+sprite_frames = SubResource("SpriteFrames_2kxvi")
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 328.0
+offset_top = 154.0
+offset_right = 382.0
+offset_bottom = 181.0
+focus_mode = 0
+theme = ExtResource("8_y76ip")
+theme_override_font_sizes/font_size = 21
+text = "SKILL"
+script = ExtResource("11_i8xwb")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+z_index = 4
+offset_left = 262.0
+offset_top = 154.0
+offset_right = 327.0
+offset_bottom = 181.0
+focus_mode = 0
+theme = ExtResource("8_y76ip")
+theme_override_fonts/font = ExtResource("5_6q2vf")
+theme_override_font_sizes/font_size = 21
+text = "ATTACK"
+script = ExtResource("9_v4sas")
+
+[node name="Animation" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Fire" parent="Animation" instance=ExtResource("12_0l13k")]
+sprite_frames = ExtResource("13_4j4pc")
+
+[node name="N1" parent="Animation" instance=ExtResource("13_4sirj")]
+sprite_frames = ExtResource("15_w6745")
+frame = 8
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(192, 108)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../CanvasLayer2")
+libraries = {
+"": SubResource("AnimationLibrary_0gr2l")
+}
+
+[connection signal="pressed" from="CanvasLayer/Button2" to="CanvasLayer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="CanvasLayer/Button" method="_on_animation_player_animation_finished"]

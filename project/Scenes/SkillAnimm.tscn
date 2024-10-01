@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://buhve7is0ght8"]
+
+[node name="Animation" type="CanvasLayer"]
+layer = 2
